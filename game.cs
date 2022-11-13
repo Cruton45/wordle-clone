@@ -83,18 +83,23 @@ class Game
         {
             if (Word.Contains(Guess[i]))
             {
-                if (Word.IndexOf(Guess[i]) == i)
-                {
-                    guessesTable["correct"][i] = Guess[i];
-                    Guess.Remove(i);
-                }
-                else
+                if (Word.IndexOf(Guess[i]) != i)
                 {
                     if (NumOfFoundLetters > Word.Length) continue;
                     if (guessesTable["almostCorrect"].Contains(Guess[i])) continue;
                     guessesTable["almostCorrect"].Remove('|');
                     guessesTable["almostCorrect"].Add(Guess[i]);
                     NumOfFoundLetters++;
+                }
+                else if (Word.IndexOf(Guess[i]) == i)
+                {
+                    guessesTable["correct"][i] = Guess[i];
+                    Guess.Remove(i);
+                    if (guessesTable["almostCorrect"].Contains(Guess[i]))
+                    {
+                        guessesTable["almostCorrect"].Remove(Guess[i]);
+                        guessesTable["almostCorrect"].Add('|');
+                    }
                 }
             }
         }
