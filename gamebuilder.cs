@@ -8,12 +8,12 @@ namespace WordleClone;
 
 public class GameBuilder
 {
-    private String WordFile = "words.txt";
-    private int WordFileLength;
-    public String Word;
-    public IDictionary<string, List<char>> guessesTable = new Dictionary<string, List<char>>();
-    private Random rand = new Random();
-    public GameBuilder()
+    private static String WordFile = "words.txt";
+    private static int WordFileLength;
+    public static String Word;
+    public static IDictionary<string, List<char>> guessesTable = new Dictionary<string, List<char>>();
+    private static Random rand = new Random();
+    static GameBuilder()
     {
         guessesTable.Add("almostCorrect", new List<char>());
         guessesTable.Add("correct", new List<char>());

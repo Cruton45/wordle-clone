@@ -8,17 +8,16 @@ namespace WordleClone;
 
 class Game
 {
-    public static GameBuilder? gameBuilder;
     public static String? Word;
     public static int guessNumber = 6;
     public static string? Guess = ".....";
     public static IDictionary<string, List<char>> guessesTable = new Dictionary<string, List<char>>();
     static void Main(string[] args)
     {
-        gameBuilder = new GameBuilder();
+        new GameBuilder();
         new apihelper();
-        Word = gameBuilder.Word;
-        guessesTable = gameBuilder.guessesTable;
+        Word = GameBuilder.Word;
+        guessesTable = GameBuilder.guessesTable;
         Console.WriteLine(Word);
         GameLoop();
     }
