@@ -22,7 +22,7 @@ public class apihelper
 
     public static bool IsValidWord(string word)
     {
-        var request = new RestRequest("https://api.dictionaryapi.dev/api/v2/entries/en/" + word);
+        var request = new RestRequest(BaseUrl + word);
 
         var responce = client.Get(request).Content[3];
 
