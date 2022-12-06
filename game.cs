@@ -18,7 +18,6 @@ class Game
         new apihelper();
         Word = GameBuilder.Word;
         guessesTable = GameBuilder.guessesTable;
-        Console.WriteLine(Word);
         GameLoop();
     }
 
