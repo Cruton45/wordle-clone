@@ -16,8 +16,6 @@ public class apihelper
         var request = new RestRequest();
 
         var responce = client.Get(request).Content;
-
-        Console.WriteLine(responce);
     }
 
     public static bool IsValidWord(string word)
